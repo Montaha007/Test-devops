@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK21'
+        jdk 'JDK-21'
     }
 
     stages {
@@ -10,13 +10,13 @@ pipeline {
         stage('Checkout code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Jamina-ENSI/Hello_example.git'
+                    url: 'https://github.com/Montaha007/Test-devops.git'
             }
         }
 
         stage('Compile code') {
             steps {
-                sh 'javac Test.java'
+                sh 'javac -d . src/Test.java'
             }
         }
 
